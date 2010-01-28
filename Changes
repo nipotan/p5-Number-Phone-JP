@@ -1,0 +1,35 @@
+Revision histories for Perl extension Number::Phone::JP
+
+0.20100104 Thu Jan 28 2010
+     - Updated some table classes ...
+       was menthioned by MIKIHOSHI (KAN Fushihara). thanks for letting me know.
+     - Added a new table class Number::Phone::JP::Table::Fmc
+     - And also Number::Phone::JP::Table::Upt class will be deprecated
+       in near future.
+     - Added a script that updates all of the table classes
+       when the tables are updated.
+
+0.12  Thu Jun  4 2008
+     - Updated some table classes
+
+0.11  Thu Feb 12 2008
+     - Updated all table classes
+
+0.10  Thu Feb 15 2007
+     - Full refactored. lib/* and t/*
+     - Added a new table class Number::Phone::JP::Table::Upt
+
+0.03  Thu Jul 11 2003
+     - Bug fixed in set_number() method working.
+       ... is_valid_number() method reuses old garbage data when the
+           passed argument(s) is invalid.
+           Found by Taro Nishino. Thanks !!
+     - Added new pattern to set a phone number by scalar context.
+       ... Perceived by Taro Nishino. Thanks too !!
+
+0.02  Tue Jul 11 2003
+     - Bug fixed in table of Number::Phone::JP::Table::Home.
+       ... local area prefix must not begins from "0" (ZERO).
+
+0.01  Tue Jul 08 2003
+     - original version
