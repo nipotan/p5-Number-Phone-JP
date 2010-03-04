@@ -148,6 +148,7 @@ sub home {
     my %table = ();
     my @ok = ();
     my @ng = ();
+    my $modified;
 
     for my $num (1 .. 9) {
         my $file = sprintf 'fixed_%d.xls', $num;
@@ -156,8 +157,9 @@ sub home {
         my $res = http_get_file($file);
         unless ($res == 200) {
             _warn("fail to get new file: $file ($res)");
-            return;
+            next;
         }
+        $modified = 1;
         my $excel = Spreadsheet::ParseExcel::Workbook->Parse($file);
         my $sheet = shift @{$excel->{Worksheet}};
         $sheet->{MaxRow} ||= $sheet->{MinRow};
@@ -178,6 +180,7 @@ sub home {
             _warn(sprintf "%s-%s: %s", $pref, $local_pref, $status);
         }
     }
+    return unless $modified;
 
     open my $fh, '>', $filename or die "$filename: $!";
     print $fh table_class_header($class);
