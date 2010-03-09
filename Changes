@@ -1,5 +1,8 @@
 Revision histories for Perl extension Number::Phone::JP
 
+0.20100302 Tue Mar  9 2010
+     - Covered the failure of previous version.
+
 0.20100301 Tue Mar  9 2010
      - Updated some table classes
 
