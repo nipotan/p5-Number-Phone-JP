@@ -1,4 +1,4 @@
-#!perl
+#!/usr/local/bin/perl
 
 use strict;
 use warnings;
@@ -121,7 +121,7 @@ sub fixed_pref {
             _warn($number . ("x" x (length $test_suffix)));
             my $value = $column_values->{$row}{$col};
             $number =~ s/^$prefix//;
-            if ($value =~ /^(\s|-)*$/) {
+            if (!defined $value || $value =~ /^(\s|-)*$/) {
                 push @ng, "$prefix ${number}${test_suffix}";
                 next;
             }
@@ -165,7 +165,7 @@ sub home {
         $sheet->{MaxRow} ||= $sheet->{MinRow};
         for my $row ($sheet->{MinRow} .. $sheet->{MaxRow}) {
             my $pref = $sheet->{Cells}[$row][3]->{Val};
-            next unless $pref =~ s/^0//;
+            next unless defined $pref && $pref =~ s/^0//;
             my $local_pref = $sheet->{Cells}[$row][4]->{Val};
             my $status = encode('utf-8', $sheet->{Cells}[$row][6]->Value);
             unless ($status =~ /(?:使用中|使用予定)/) {
@@ -203,7 +203,7 @@ sub class {
         _warn("fail to get new file: $file ($res)");
         return;
     }
-    my $prefix = qr<00(?:[3-8]|2\d|91\d)?>;
+    my $prefix = qr<00(?:[3-8]|2\d|91\d)?$>;
     my($rows, $cols, $column_values) = table_parse($file, $prefix);
 
     # formerly, the numbers that's prefixed by "009" are called class2.
@@ -310,7 +310,7 @@ sub mobile {
             _warn("${number}xxxxx");
             my $value = $column_values->{$row}{$col};
             $number =~ s/^080//;
-            if ($value =~ /^(\s|-)*$/) {
+            if (!defined $value || $value =~ /^(\s|-)*$/) {
                 push @ng, "080 ${number}12345";
                 next;
             }
@@ -422,7 +422,7 @@ sub freedial {
             _warn("${number}xxxx");
             my $value = $column_values->{$row}{$col};
             $number =~ s/^0800//;
-            if ($value =~ /^(\s|-)*$/) {
+            if (!defined $value || $value =~ /^(\s|-)*$/) {
                 push @ng, "0800 ${number}1234";
                 next;
             }
