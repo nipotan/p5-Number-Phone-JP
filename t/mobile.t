@@ -599,6 +599,8 @@ ok($tel->set_number('080 81412345')->is_valid_number, 'checking for 080 81412345
 ok($tel->set_number('080 81512345')->is_valid_number, 'checking for 080 81512345');
 ok($tel->set_number('080 81612345')->is_valid_number, 'checking for 080 81612345');
 ok($tel->set_number('080 81712345')->is_valid_number, 'checking for 080 81712345');
+ok($tel->set_number('080 81812345')->is_valid_number, 'checking for 080 81812345');
+ok($tel->set_number('080 81912345')->is_valid_number, 'checking for 080 81912345');
 ok($tel->set_number('080 82012345')->is_valid_number, 'checking for 080 82012345');
 ok($tel->set_number('080 82112345')->is_valid_number, 'checking for 080 82112345');
 ok($tel->set_number('080 82512345')->is_valid_number, 'checking for 080 82512345');
@@ -613,6 +615,7 @@ ok($tel->set_number('080 83512345')->is_valid_number, 'checking for 080 83512345
 ok($tel->set_number('080 83612345')->is_valid_number, 'checking for 080 83612345');
 ok($tel->set_number('080 83712345')->is_valid_number, 'checking for 080 83712345');
 ok($tel->set_number('080 83812345')->is_valid_number, 'checking for 080 83812345');
+ok($tel->set_number('080 84012345')->is_valid_number, 'checking for 080 84012345');
 ok($tel->set_number('090 10012345')->is_valid_number, 'checking for 090 10012345');
 ok($tel->set_number('090 10112345')->is_valid_number, 'checking for 090 10112345');
 ok($tel->set_number('090 10212345')->is_valid_number, 'checking for 090 10212345');
@@ -1636,15 +1639,12 @@ ok(!$tel->set_number('080 79612345')->is_valid_number, 'checking for 080 7961234
 ok(!$tel->set_number('080 79712345')->is_valid_number, 'checking for 080 79712345');
 ok(!$tel->set_number('080 79812345')->is_valid_number, 'checking for 080 79812345');
 ok(!$tel->set_number('080 79912345')->is_valid_number, 'checking for 080 79912345');
-ok(!$tel->set_number('080 81812345')->is_valid_number, 'checking for 080 81812345');
-ok(!$tel->set_number('080 81912345')->is_valid_number, 'checking for 080 81912345');
 ok(!$tel->set_number('080 82212345')->is_valid_number, 'checking for 080 82212345');
 ok(!$tel->set_number('080 82312345')->is_valid_number, 'checking for 080 82312345');
 ok(!$tel->set_number('080 82412345')->is_valid_number, 'checking for 080 82412345');
 ok(!$tel->set_number('080 82712345')->is_valid_number, 'checking for 080 82712345');
 ok(!$tel->set_number('080 82912345')->is_valid_number, 'checking for 080 82912345');
 ok(!$tel->set_number('080 83912345')->is_valid_number, 'checking for 080 83912345');
-ok(!$tel->set_number('080 84012345')->is_valid_number, 'checking for 080 84012345');
 ok(!$tel->set_number('080 84112345')->is_valid_number, 'checking for 080 84112345');
 ok(!$tel->set_number('080 84212345')->is_valid_number, 'checking for 080 84212345');
 ok(!$tel->set_number('080 84312345')->is_valid_number, 'checking for 080 84312345');
