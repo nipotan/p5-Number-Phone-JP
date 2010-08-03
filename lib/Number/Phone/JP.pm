@@ -6,7 +6,7 @@ use 5.008_001;
 use Carp;
 use UNIVERSAL::require;
 
-our $VERSION = '0.20100601';
+our $VERSION = '0.20100701';
 our %TEL_TABLE = ();
 
 sub import {
@@ -108,9 +108,9 @@ Number::Phone::JP - Validate Japanese phone numbers
 =head1 DESCRIPTION
 
 Number::Phone::JP is a simple module to validate Japanese phone
-number formats. The Japanese phone numbers are regulated by Ministry
-of Public Management, Home Affairs, Posts and Telecommunications of
-Japan. You can validate what a target number is valid from this
+number formats. The Japanese phone numbers are regulated by
+Ministry of Internal Afairs and Communications of Japan.
+You can validate what a target number is valid from this
 regulation point of view.
 
 There are many categories for type of telephones in Japan. This module
