@@ -25,27 +25,6 @@ Makefile.PL
 MANIFEST			This list of files
 META.yml
 README
-regexp-table-maker.pl
-share/company1.htm
-share/fixed_1.xls
-share/fixed_2.xls
-share/fixed_3.xls
-share/fixed_4.xls
-share/fixed_5.xls
-share/fixed_6.xls
-share/fixed_7.xls
-share/fixed_8.xls
-share/fixed_9.xls
-share/fmc.htm
-share/ip_number.htm
-share/jyoho_number.htm
-share/mobile0120.htm
-share/mobile0800.htm
-share/mobile80.htm
-share/mobile90.htm
-share/pager.htm
-share/phs.htm
-share/toitu_number.htm
 t/00_compile.t
 t/class1.t
 t/class2.t
