@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use base qw(Exporter);
 
-our $VERSION = '0.20100701';
+our $VERSION = '0.20100906';
 our @EXPORT = qw(%TEL_TABLE);
 
 require Number::Phone::JP::Table::Class1;

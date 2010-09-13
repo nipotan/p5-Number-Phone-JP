@@ -1,12 +1,21 @@
 Revision histories for Perl extension Number::Phone::JP
 
+0.20100906 Mon Sep 13 2010
+     - Update some table classes.
+     - Ministry of Internal Affairs and Communication of Japan
+       has been started providing the data of phone numbers as
+       Microsoft Excel formats by request from me.
+       I appreciate their sincere response and I apologize
+       my inappropriate change-log as below.
+     - Regexp generator was rebundled.
+
 0.20100701 Tue Aug  3 2010
      - Update some table classes.
      - Pod update.
      - Ministry of Internal Affairs and Communication of Japan
        has stopped providing the data of phone numbers by HTMLs.
        Instead, bloody PDFs have been started to provide
-       as substitute for HTMLs. They sucks. Then I tried to make
+       as substitute for HTMLs. They suck. Then I tried to make
        the massive regexp tables by myself.
      - Regexp generator was removed.
 
