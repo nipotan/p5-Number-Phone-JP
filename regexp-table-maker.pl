@@ -278,7 +278,9 @@ sub class {
     print $fh table_class_header('Class1');
     for my $row (@rows1) {
         for my $col (sort { $a <=> $b } keys %$cols) {
-            next unless $rows->{$row};
+            next unless length $rows->{$row};
+            # fixing illegal cell formats
+            $rows->{$row} =~ s/^0+/00/ unless $rows->{$row} =~ /^00/;
             my $prefix = sprintf '%s%s', $rows->{$row}, $cols->{$col};
             _warn("${prefix}xxxxxxxx");
             my $value = $column_values->{$row}{$col};
@@ -309,6 +311,8 @@ sub class {
     for my $row (@rows2) {
         for my $col (sort { $a <=> $b } keys %$cols) {
             next unless $rows->{$row};
+            # fixing illegal cell formats
+            $rows->{$row} =~ s/^0+/00/ unless $rows->{$row} =~ /^00/;
             my $prefix = sprintf '%s%s', $rows->{$row}, $cols->{$col};
             _warn("${prefix}xxxxxxxx");
             my $value = $column_values->{$row}{$col};

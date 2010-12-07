@@ -6867,6 +6867,7 @@ ok($tel->set_number('03 45811234')->is_valid_number, 'checking for 03 45811234')
 ok($tel->set_number('03 45821234')->is_valid_number, 'checking for 03 45821234');
 ok($tel->set_number('03 45861234')->is_valid_number, 'checking for 03 45861234');
 ok($tel->set_number('03 45881234')->is_valid_number, 'checking for 03 45881234');
+ok($tel->set_number('03 45891234')->is_valid_number, 'checking for 03 45891234');
 ok($tel->set_number('03 45901234')->is_valid_number, 'checking for 03 45901234');
 ok($tel->set_number('03 45961234')->is_valid_number, 'checking for 03 45961234');
 ok($tel->set_number('03 50001234')->is_valid_number, 'checking for 03 50001234');
@@ -10759,6 +10760,7 @@ ok($tel->set_number('0476 501234')->is_valid_number, 'checking for 0476 501234')
 ok($tel->set_number('0476 551234')->is_valid_number, 'checking for 0476 551234');
 ok($tel->set_number('0476 561234')->is_valid_number, 'checking for 0476 561234');
 ok($tel->set_number('0476 581234')->is_valid_number, 'checking for 0476 581234');
+ok($tel->set_number('0476 661234')->is_valid_number, 'checking for 0476 661234');
 ok($tel->set_number('0476 701234')->is_valid_number, 'checking for 0476 701234');
 ok($tel->set_number('0476 711234')->is_valid_number, 'checking for 0476 711234');
 ok($tel->set_number('0476 721234')->is_valid_number, 'checking for 0476 721234');
@@ -28795,7 +28797,6 @@ ok(!$tel->set_number('03 45831234')->is_valid_number, 'checking for 03 45831234'
 ok(!$tel->set_number('03 45841234')->is_valid_number, 'checking for 03 45841234');
 ok(!$tel->set_number('03 45851234')->is_valid_number, 'checking for 03 45851234');
 ok(!$tel->set_number('03 45871234')->is_valid_number, 'checking for 03 45871234');
-ok(!$tel->set_number('03 45891234')->is_valid_number, 'checking for 03 45891234');
 ok(!$tel->set_number('03 45911234')->is_valid_number, 'checking for 03 45911234');
 ok(!$tel->set_number('03 45921234')->is_valid_number, 'checking for 03 45921234');
 ok(!$tel->set_number('03 45931234')->is_valid_number, 'checking for 03 45931234');
@@ -30961,7 +30962,6 @@ ok(!$tel->set_number('0476 621234')->is_valid_number, 'checking for 0476 621234'
 ok(!$tel->set_number('0476 631234')->is_valid_number, 'checking for 0476 631234');
 ok(!$tel->set_number('0476 641234')->is_valid_number, 'checking for 0476 641234');
 ok(!$tel->set_number('0476 651234')->is_valid_number, 'checking for 0476 651234');
-ok(!$tel->set_number('0476 661234')->is_valid_number, 'checking for 0476 661234');
 ok(!$tel->set_number('0476 671234')->is_valid_number, 'checking for 0476 671234');
 ok(!$tel->set_number('0476 681234')->is_valid_number, 'checking for 0476 681234');
 ok(!$tel->set_number('0476 691234')->is_valid_number, 'checking for 0476 691234');
