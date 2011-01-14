@@ -6,7 +6,7 @@ use 5.008_001;
 use Carp;
 use UNIVERSAL::require;
 
-our $VERSION = '0.20101201';
+our $VERSION = '0.20110106';
 our %TEL_TABLE = ();
 
 sub import {
