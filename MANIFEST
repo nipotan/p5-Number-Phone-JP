@@ -1,5 +1,6 @@
 Changes
 inc/Module/Install.pm
+inc/Module/Install/AuthorTests.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
@@ -42,3 +43,5 @@ t/pod.t
 t/q2.t
 t/united.t
 t/upt.t
+xt/perlcritic.t
+xt/perlcriticrc
