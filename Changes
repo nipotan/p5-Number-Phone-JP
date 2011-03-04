@@ -1,5 +1,10 @@
 Revision histories for Perl extension Number::Phone::JP
 
+0.20110301 Fri Mar  4 2011
+     - Update some table classes.
+     - move a test involved with perlcritic to xt (author_test)
+       to stop to be received some reports.
+
 0.20110201 Wed Feb  9 2011
      - Update some table classes.
 

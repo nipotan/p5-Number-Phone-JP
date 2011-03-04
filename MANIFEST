@@ -36,8 +36,6 @@ t/home.t
 t/ipphone.t
 t/mobile.t
 t/pager.t
-t/perlcritic.t
-t/perlcriticrc
 t/phs.t
 t/pod.t
 t/q2.t
