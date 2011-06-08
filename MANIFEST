@@ -41,5 +41,6 @@ t/pod.t
 t/q2.t
 t/united.t
 t/upt.t
+t/use-twice.t
 xt/perlcritic.t
 xt/perlcriticrc
