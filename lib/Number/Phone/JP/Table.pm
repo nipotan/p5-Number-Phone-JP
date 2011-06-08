@@ -2,10 +2,8 @@ package Number::Phone::JP::Table;
 
 use strict;
 use warnings;
-use base qw(Exporter);
 
-our $VERSION = '0.20110401';
-our @EXPORT = qw(%TEL_TABLE);
+our $VERSION = '0.20110502';
 
 require Number::Phone::JP::Table::Class1;
 require Number::Phone::JP::Table::Class2;
@@ -34,6 +32,13 @@ our %TEL_TABLE = (
     %Number::Phone::JP::Table::United::TEL_TABLE,
     %Number::Phone::JP::Table::Fmc::TEL_TABLE,
 );
+
+sub import {
+    my $class = shift;
+    my $pkg = caller(0);
+    no strict 'refs';
+    %{"$pkg\::TEL_TABLE"} = %TEL_TABLE;
+}
 
 1;
 __END__
