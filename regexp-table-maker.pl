@@ -41,45 +41,48 @@ sub main {
             function    => 'fixed_pref',
             prefix      => '070',
             test_suffix => '12345',
+            filename    => '070.xls',
         },
         Pager    => +{
             function    => 'fixed_pref',
             prefix      => '020',
             test_suffix => '12345',
+            filename    => '020.xls',
         },
         Q2       => +{
             function    => 'fixed_pref',
             prefix      => '0990',
             test_suffix => '123',
-            filename    => 'jyoho_number.xls',
+            filename    => '0990.xls',
         },
         Fmc      => +{
             function    => 'fixed_pref',
             prefix      => '060',
+            filename    => '060.xls',
         },
         Upt      => +{ function    => 'upt' },
         United   => +{
             function    => 'fixed_pref',
             prefix      => '0570',
             test_suffix => '123',
-            filename    => 'toitu_number.xls',
+            filename    => '0570.xls',
         },
         Ipphone  => +{
             function    => 'fixed_pref',
             prefix      => '050',
-            filename    => 'ip_number.xls',
+            filename    => '050.xls',
         },
         Mobile   => +{
             function    => 'fixed_pref',
             prefix      => [qw(080 090)],
             test_suffix => '12345',
-            filename    => [qw(mobile80.xls mobile90.xls)],
+            filename    => [qw(080.xls 090.xls)],
         },
         Freedial => +{
             function    => 'fixed_pref',
             prefix      => [qw(0120 0800)],
             test_suffix => +{ '0120' => '123', '0800' => '1234' },
-            filename    => [qw(mobile0120.xls mobile0800.xls)],
+            filename    => [qw(0120.xls 0800.xls)],
         },
     );
 
@@ -246,9 +249,9 @@ sub home {
 }
 
 sub class {
-    my $file = 'company1.xls';
+    my $file = '00xy.xls';
     _warn($file);
-    $file = "$STOREDIR/company1.xls";
+    $file = "$STOREDIR/00xy.xls";
     http_get_file($file) or die "HTTP failed";
 
     my($rows, $cols, $column_values) = parse_excel($file);
