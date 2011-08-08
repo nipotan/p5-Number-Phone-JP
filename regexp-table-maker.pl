@@ -41,48 +41,48 @@ sub main {
             function    => 'fixed_pref',
             prefix      => '070',
             test_suffix => '12345',
-            filename    => '070.xls',
+            filename    => '000124109.xls',
         },
         Pager    => +{
             function    => 'fixed_pref',
             prefix      => '020',
             test_suffix => '12345',
-            filename    => '020.xls',
+            filename    => '000124105.xls',
         },
         Q2       => +{
             function    => 'fixed_pref',
             prefix      => '0990',
             test_suffix => '123',
-            filename    => '0990.xls',
+            filename    => '000124118.xls',
         },
         Fmc      => +{
             function    => 'fixed_pref',
             prefix      => '060',
-            filename    => '060.xls',
+            filename    => '000124107.xls',
         },
         Upt      => +{ function    => 'upt' },
         United   => +{
             function    => 'fixed_pref',
             prefix      => '0570',
             test_suffix => '123',
-            filename    => '0570.xls',
+            filename    => '000124113.xls',
         },
         Ipphone  => +{
             function    => 'fixed_pref',
             prefix      => '050',
-            filename    => '050.xls',
+            filename    => '000124106.xls',
         },
         Mobile   => +{
             function    => 'fixed_pref',
             prefix      => [qw(080 090)],
             test_suffix => '12345',
-            filename    => [qw(080.xls 090.xls)],
+            filename    => [qw(000124110.xls 000124111.xls)],
         },
         Freedial => +{
             function    => 'fixed_pref',
             prefix      => [qw(0120 0800)],
             test_suffix => +{ '0120' => '123', '0800' => '1234' },
-            filename    => [qw(0120.xls 0800.xls)],
+            filename    => [qw(000124112.xls 000124114.xls)],
         },
     );
 
@@ -206,7 +206,7 @@ sub home {
 
     no warnings 'uninitialized';
     for my $num (1 .. 9) {
-        my $file = sprintf 'fixed_%d.xls', $num;
+        my $file = sprintf '00012407%d.xls', $num - 1;
         _warn($file);
         $file = "$STOREDIR/$file";
         http_get_file($file) or die "HTTP failed";
@@ -249,9 +249,9 @@ sub home {
 }
 
 sub class {
-    my $file = '00xy.xls';
+    my $file = '000124104.xls';
     _warn($file);
-    $file = "$STOREDIR/00xy.xls";
+    $file = "$STOREDIR/$file";
     http_get_file($file) or die "HTTP failed";
 
     my($rows, $cols, $column_values) = parse_excel($file);
@@ -407,11 +407,8 @@ sub parse_excel {
 sub http_get_file {
     my $file = shift;
     my $uri = basename($file);
-    my($ext) = $uri =~ /\.([^\.]+)$/;
-    my $url =
-        sprintf
-            'http://www.soumu.go.jp/main_sosiki/joho_tsusin/top/tel_number/%s/%s',
-                $ext, $uri;
+    #my($ext) = $uri =~ /\.([^\.]+)$/;
+    my $url = sprintf 'http://www.soumu.go.jp/main_content/%s', $uri;
     _warn($url);
     my $res = LWP::Simple::mirror($url, $file);
     return 1 if $res == 200 || $res == 304;

@@ -1188,6 +1188,7 @@ ok($tel->set_number('0800 7001234')->is_valid_number, 'checking for 0800 7001234
 ok($tel->set_number('0800 7771234')->is_valid_number, 'checking for 0800 7771234');
 ok($tel->set_number('0800 8001234')->is_valid_number, 'checking for 0800 8001234');
 ok($tel->set_number('0800 8081234')->is_valid_number, 'checking for 0800 8081234');
+ok($tel->set_number('0800 8801234')->is_valid_number, 'checking for 0800 8801234');
 ok($tel->set_number('0800 8881234')->is_valid_number, 'checking for 0800 8881234');
 ok($tel->set_number('0800 9001234')->is_valid_number, 'checking for 0800 9001234');
 ok($tel->set_number('0800 9191234')->is_valid_number, 'checking for 0800 9191234');
@@ -1963,7 +1964,6 @@ ok(!$tel->set_number('0800 8761234')->is_valid_number, 'checking for 0800 876123
 ok(!$tel->set_number('0800 8771234')->is_valid_number, 'checking for 0800 8771234');
 ok(!$tel->set_number('0800 8781234')->is_valid_number, 'checking for 0800 8781234');
 ok(!$tel->set_number('0800 8791234')->is_valid_number, 'checking for 0800 8791234');
-ok(!$tel->set_number('0800 8801234')->is_valid_number, 'checking for 0800 8801234');
 ok(!$tel->set_number('0800 8811234')->is_valid_number, 'checking for 0800 8811234');
 ok(!$tel->set_number('0800 8821234')->is_valid_number, 'checking for 0800 8821234');
 ok(!$tel->set_number('0800 8831234')->is_valid_number, 'checking for 0800 8831234');
