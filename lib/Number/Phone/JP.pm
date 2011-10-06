@@ -60,6 +60,17 @@ sub set_number {
         $self->_prefix = $pref;
         $self->_number = $num;
     }
+    elsif ($number =~ s/^\+81//) {
+        $self->_prefix = ();
+        $self->_number = ();
+        for (my $i = 1; $i < length $number; $i++) {
+            my $pref = substr $number, 0, $i;
+            if ($TEL_TABLE{$pref}) {
+                $self->_prefix = "0$pref";
+                $self->_number = substr $number, $i;
+            }
+        }
+    }
     else {
         carp "The number is invalid telephone number.";
         $self->_prefix = ();
@@ -83,6 +94,11 @@ sub is_valid_number {
 
 sub _prefix : lvalue { shift->{_prefix} }
 sub _number : lvalue { shift->{_number} }
+
+{
+    no warnings 'once';
+    *is_valid = \&is_valid_number;
+}
 
 1;
 __END__
