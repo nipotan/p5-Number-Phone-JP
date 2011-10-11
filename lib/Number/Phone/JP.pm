@@ -6,7 +6,7 @@ use 5.008_001;
 use Carp;
 use UNIVERSAL::require;
 
-our $VERSION = '0.20110901';
+our $VERSION = '0.20111003';
 our %TEL_TABLE = ();
 
 sub import {
@@ -14,8 +14,7 @@ sub import {
     %TEL_TABLE = ();
     if (@_) {
         for my $subclass (@_) {
-            my $package =
-                sprintf('%s::Table::%s', __PACKAGE__, ucfirst(lc($subclass)));
+            my $package = _table_class_name($subclass);
             $package->require or croak $@;
             {
                 no strict 'refs';
@@ -60,6 +59,17 @@ sub set_number {
         $self->_prefix = $pref;
         $self->_number = $num;
     }
+    elsif ($number =~ s/^\+81//) {
+        $self->_prefix = ();
+        $self->_number = ();
+        for (my $i = 1; $i < length $number; $i++) {
+            my $pref = substr $number, 0, $i;
+            if ($TEL_TABLE{$pref}) {
+                $self->_prefix = "0$pref";
+                $self->_number = substr $number, $i;
+            }
+        }
+    }
     else {
         carp "The number is invalid telephone number.";
         $self->_prefix = ();
@@ -83,6 +93,64 @@ sub is_valid_number {
 
 sub _prefix : lvalue { shift->{_prefix} }
 sub _number : lvalue { shift->{_number} }
+
+{
+    no warnings 'once';
+    *is_valid = \&is_valid_number;
+}
+
+sub _table_class_name {
+    my $subclass = shift;
+    return sprintf('%s::Table::%s', __PACKAGE__, ucfirst(lc($subclass)));
+}
+
+sub _is_this_type {
+    my($self, $type) = @_;
+    my $package = _table_class_name($type);
+    $package->require;
+    my $pref = $self->_prefix;
+    $pref =~ s/^0//;
+    no strict 'refs';
+    return exists ${"$package\::TEL_TABLE"}{$pref};
+}
+
+sub is_mobile      { return shift->_is_this_type('mobile')   }
+sub is_pager       { return shift->_is_this_type('pager')    }
+sub is_ipphone     { return shift->_is_this_type('ipphone')  }
+sub is_tollfree    { return shift->_is_this_type('freedial') }
+sub is_specialrate { return shift->_is_this_type('q2')       }
+
+sub is_allocated       { undef }
+sub is_in_use          { undef }
+sub is_geographic      { undef }
+sub is_fixed_line      { undef }
+sub is_isdn            { undef }
+sub is_adult           { undef }
+sub is_personal        { undef }
+sub is_corporate       { undef }
+sub is_government      { undef }
+sub is_international   { undef }
+sub is_network_service { undef }
+
+sub country_code { return 81 }
+
+sub regulator  { undef }
+sub areacode   { undef }
+sub areaname   { undef }
+sub location   { undef }
+sub subscriber { undef }
+sub operator   { undef }
+sub type       { undef }
+
+sub format {
+    my $self = shift;
+    my $pref = $self->_prefix;
+    $pref =~ s/^0//;
+    return sprintf '+%s %s %s', $self->country_code, $pref, $self->_number;
+}
+
+sub country       { undef }
+sub translates_to { undef }
 
 1;
 __END__
@@ -187,6 +255,90 @@ method is same as C<new()> method (see above).
 This method validates what the already set number is valid on your
 specified categories. It returns true if the number is valid, and
 returns false if the number is invalid.
+
+=head1 Number::Phone COMPATIBLE METHODS
+
+=head2 is_valid
+
+Simply you can call C<is_valid()> method instead of C<is_valid_number>.
+
+=head2 is_mobile
+
+It checks that is the prefix of the number which you set is used
+for mobile numbers. It just checks only prefix.
+
+=head2 is_pager
+
+It checks that is the prefix of the number which you set is used
+for pager (a.k.a pocketbell) numbers. It just checks only prefix.
+
+=head2 is_ipphone
+
+It checks that is the prefix of the number which you set is used
+for IP phone numbers. It just checks only prefix.
+
+=head2 is_tollfree
+
+It checks that is the prefix of the number which you set is used
+for IP tollfree (a.k.a. freedial) numbers. It just checks only prefix.
+
+=head2 is_specialrate
+
+It checks that is the prefix of the number which you set is used
+for specialrate (a.k.a. dial Q2) numbers. It just checks only prefix.
+
+=head2 country_code
+
+The numeric code for Japan. Just returns 81. Note that there is *no* + sign.
+
+=head2 format
+
+Return a sanely formatted version of the number, complete with IDD code, eg
+for the Japanese number 090-0123-4567 it would return +81 90 01234567.
+
+=head1 UNIMPLEMENTED METHODS
+
+Following methods are not implemented on this module. It just returns undef.
+
+=head2 is_allocated
+
+=head2 is_in_use
+
+=head2 is_geographic
+
+=head2 is_fixed_line
+
+=head2 is_isdn
+
+=head2 is_adult
+
+=head2 is_personal
+
+=head2 is_corporate
+
+=head2 is_government
+
+=head2 is_international
+
+=head2 is_network_service
+
+=head2 regulator
+
+=head2 areacode
+
+=head2 areaname
+
+=head2 location
+
+=head2 subscriber
+
+=head2 operator
+
+=head2 type
+
+=head2 country
+
+=head2 translates_to
 
 =head1 EXAMPLE
 

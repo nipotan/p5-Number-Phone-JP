@@ -1,5 +1,14 @@
 Revision histories for Perl extension Number::Phone::JP
 
+0.20111003 Tue Oct 11 2011
+     - Update some table classes.
+     - Fixed typo (bug) in xt/perlcritic.t
+     - Modified JP.pm to work correctly when the user uses Number::Phone
+       module and set Japanese number with country code prefix.
+       was advised, and patched by Naoki Tomita (tomi-ru).
+     - Implemented some Number::Phone compatible methods and interfaces.
+       was also patched by Naoki Tomita (tomi-ru). thanks a lot.
+
 0.20110901 Mon Sep  5 2011
      - Update some table classes.
 

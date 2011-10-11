@@ -34,7 +34,13 @@ t/fmc.t
 t/freedial.t
 t/home.t
 t/ipphone.t
+t/is_ipphone.t
+t/is_mobile.t
+t/is_pager.t
+t/is_specialrate.t
+t/is_tollfree.t
 t/mobile.t
+t/number-phone.t
 t/pager.t
 t/phs.t
 t/pod.t
