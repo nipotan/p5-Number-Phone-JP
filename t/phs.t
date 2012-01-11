@@ -73,12 +73,7 @@ ok($tel->set_number('070 56612345')->is_valid_number, 'checking for 070 56612345
 ok($tel->set_number('070 56712345')->is_valid_number, 'checking for 070 56712345');
 ok($tel->set_number('070 56812345')->is_valid_number, 'checking for 070 56812345');
 ok($tel->set_number('070 56912345')->is_valid_number, 'checking for 070 56912345');
-ok($tel->set_number('070 57712345')->is_valid_number, 'checking for 070 57712345');
-ok($tel->set_number('070 57812345')->is_valid_number, 'checking for 070 57812345');
-ok($tel->set_number('070 57912345')->is_valid_number, 'checking for 070 57912345');
 ok($tel->set_number('070 58112345')->is_valid_number, 'checking for 070 58112345');
-ok($tel->set_number('070 59312345')->is_valid_number, 'checking for 070 59312345');
-ok($tel->set_number('070 59412345')->is_valid_number, 'checking for 070 59412345');
 ok($tel->set_number('070 61012345')->is_valid_number, 'checking for 070 61012345');
 ok($tel->set_number('070 61112345')->is_valid_number, 'checking for 070 61112345');
 ok($tel->set_number('070 61212345')->is_valid_number, 'checking for 070 61212345');
@@ -136,7 +131,6 @@ ok($tel->set_number('070 66612345')->is_valid_number, 'checking for 070 66612345
 ok($tel->set_number('070 66712345')->is_valid_number, 'checking for 070 66712345');
 ok($tel->set_number('070 66812345')->is_valid_number, 'checking for 070 66812345');
 ok($tel->set_number('070 66912345')->is_valid_number, 'checking for 070 66912345');
-ok($tel->set_number('070 67512345')->is_valid_number, 'checking for 070 67512345');
 ok($tel->set_number('070 68012345')->is_valid_number, 'checking for 070 68012345');
 ok($tel->set_number('070 68112345')->is_valid_number, 'checking for 070 68112345');
 ok($tel->set_number('070 68212345')->is_valid_number, 'checking for 070 68212345');
@@ -161,6 +155,9 @@ ok(!$tel->set_number('070 57312345')->is_valid_number, 'checking for 070 5731234
 ok(!$tel->set_number('070 57412345')->is_valid_number, 'checking for 070 57412345');
 ok(!$tel->set_number('070 57512345')->is_valid_number, 'checking for 070 57512345');
 ok(!$tel->set_number('070 57612345')->is_valid_number, 'checking for 070 57612345');
+ok(!$tel->set_number('070 57712345')->is_valid_number, 'checking for 070 57712345');
+ok(!$tel->set_number('070 57812345')->is_valid_number, 'checking for 070 57812345');
+ok(!$tel->set_number('070 57912345')->is_valid_number, 'checking for 070 57912345');
 ok(!$tel->set_number('070 58012345')->is_valid_number, 'checking for 070 58012345');
 ok(!$tel->set_number('070 58212345')->is_valid_number, 'checking for 070 58212345');
 ok(!$tel->set_number('070 58312345')->is_valid_number, 'checking for 070 58312345');
@@ -173,6 +170,8 @@ ok(!$tel->set_number('070 58912345')->is_valid_number, 'checking for 070 5891234
 ok(!$tel->set_number('070 59012345')->is_valid_number, 'checking for 070 59012345');
 ok(!$tel->set_number('070 59112345')->is_valid_number, 'checking for 070 59112345');
 ok(!$tel->set_number('070 59212345')->is_valid_number, 'checking for 070 59212345');
+ok(!$tel->set_number('070 59312345')->is_valid_number, 'checking for 070 59312345');
+ok(!$tel->set_number('070 59412345')->is_valid_number, 'checking for 070 59412345');
 ok(!$tel->set_number('070 59512345')->is_valid_number, 'checking for 070 59512345');
 ok(!$tel->set_number('070 59612345')->is_valid_number, 'checking for 070 59612345');
 ok(!$tel->set_number('070 59712345')->is_valid_number, 'checking for 070 59712345');
@@ -196,6 +195,7 @@ ok(!$tel->set_number('070 67112345')->is_valid_number, 'checking for 070 6711234
 ok(!$tel->set_number('070 67212345')->is_valid_number, 'checking for 070 67212345');
 ok(!$tel->set_number('070 67312345')->is_valid_number, 'checking for 070 67312345');
 ok(!$tel->set_number('070 67412345')->is_valid_number, 'checking for 070 67412345');
+ok(!$tel->set_number('070 67512345')->is_valid_number, 'checking for 070 67512345');
 ok(!$tel->set_number('070 67612345')->is_valid_number, 'checking for 070 67612345');
 ok(!$tel->set_number('070 67712345')->is_valid_number, 'checking for 070 67712345');
 ok(!$tel->set_number('070 67812345')->is_valid_number, 'checking for 070 67812345');
