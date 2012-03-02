@@ -1,5 +1,13 @@
 Revision histories for Perl extension Number::Phone::JP
 
+0.20120301 Fri Mar  2 2012
+     - Update some table classes.
+     - Quit updating the table of Number::Phone::JP::Table::Fmc.
+       It will be deprecated because Ministry of Internal Afairs and
+       Communications of Japan stopped updating this table.
+       They said the number which is prefixed with "060" is currently
+       no longer used by any telecommunication business operator.
+
 0.20120105 Wed Jan 11 2012
      - Update some table classes.
 

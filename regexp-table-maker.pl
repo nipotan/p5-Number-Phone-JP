@@ -55,11 +55,11 @@ sub main {
             test_suffix => '123',
             filename    => '000124118.xls',
         },
-        Fmc      => +{
-            function    => 'fixed_pref',
-            prefix      => '060',
-            filename    => '000124107.xls',
-        },
+#        Fmc      => +{
+#            function    => 'fixed_pref',
+#            prefix      => '060',
+#            filename    => '000124107.xls',
+#        },
         Upt      => +{ function    => 'upt' },
         United   => +{
             function    => 'fixed_pref',
@@ -102,6 +102,10 @@ sub main {
         }
         else {
             my $func = lc($class);
+            unless (defined $::{$func}) {
+                _warn("$func() is not defined. skipping");
+                next;
+            }
             _warn("calling $func()");
             $func->($class);
         }

@@ -4,7 +4,7 @@ use strict;
 use warnings;
 require Number::Phone::JP::Table::Fmc;
 
-our $VERSION = '0.20120105';
+our $VERSION = '0.20120301';
 
 our %TEL_TABLE = %Number::Phone::JP::Table::Fmc::TEL_TABLE;
 
