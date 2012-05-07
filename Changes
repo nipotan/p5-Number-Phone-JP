@@ -1,5 +1,8 @@
 Revision histories for Perl extension Number::Phone::JP
 
+0.20120502 Mon May  7 2012
+     - Update some table classes.
+
 0.20120301 Fri Mar  2 2012
      - Update some table classes.
      - Quit updating the table of Number::Phone::JP::Table::Fmc.
