@@ -3,9 +3,9 @@ package Number::Phone::JP::Table::Class1;
 use strict;
 use warnings;
 
-our $VERSION = '0.20120502';
+our $VERSION = '0.20120601';
 
-# Table last modified: 2012-05-02
+# Table last modified: 2012-06-01
 our %TEL_TABLE = (
     # Pref => q<Assoc-Pref-Regex>,
     '01'    => '\d+', # KDDI
