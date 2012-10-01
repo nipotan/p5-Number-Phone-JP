@@ -10692,6 +10692,7 @@ ok($tel->set_number('0476 461234')->is_valid_number, 'checking for 0476 461234')
 ok($tel->set_number('0476 471234')->is_valid_number, 'checking for 0476 471234');
 ok($tel->set_number('0476 481234')->is_valid_number, 'checking for 0476 481234');
 ok($tel->set_number('0476 491234')->is_valid_number, 'checking for 0476 491234');
+ok($tel->set_number('0476 501234')->is_valid_number, 'checking for 0476 501234');
 ok($tel->set_number('0476 551234')->is_valid_number, 'checking for 0476 551234');
 ok($tel->set_number('0476 561234')->is_valid_number, 'checking for 0476 561234');
 ok($tel->set_number('0476 581234')->is_valid_number, 'checking for 0476 581234');
@@ -30819,7 +30820,6 @@ ok(!$tel->set_number('0476 391234')->is_valid_number, 'checking for 0476 391234'
 ok(!$tel->set_number('0476 411234')->is_valid_number, 'checking for 0476 411234');
 ok(!$tel->set_number('0476 431234')->is_valid_number, 'checking for 0476 431234');
 ok(!$tel->set_number('0476 441234')->is_valid_number, 'checking for 0476 441234');
-ok(!$tel->set_number('0476 501234')->is_valid_number, 'checking for 0476 501234');
 ok(!$tel->set_number('0476 511234')->is_valid_number, 'checking for 0476 511234');
 ok(!$tel->set_number('0476 521234')->is_valid_number, 'checking for 0476 521234');
 ok(!$tel->set_number('0476 531234')->is_valid_number, 'checking for 0476 531234');
