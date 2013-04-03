@@ -11021,6 +11021,7 @@ ok($tel->set_number('048 8841234')->is_valid_number, 'checking for 048 8841234')
 ok($tel->set_number('048 8851234')->is_valid_number, 'checking for 048 8851234');
 ok($tel->set_number('048 8861234')->is_valid_number, 'checking for 048 8861234');
 ok($tel->set_number('048 8871234')->is_valid_number, 'checking for 048 8871234');
+ok($tel->set_number('048 8881234')->is_valid_number, 'checking for 048 8881234');
 ok($tel->set_number('048 2011234')->is_valid_number, 'checking for 048 2011234');
 ok($tel->set_number('048 2021234')->is_valid_number, 'checking for 048 2021234');
 ok($tel->set_number('048 2031234')->is_valid_number, 'checking for 048 2031234');
@@ -12087,6 +12088,7 @@ ok($tel->set_number('053 5501234')->is_valid_number, 'checking for 053 5501234')
 ok($tel->set_number('053 5531234')->is_valid_number, 'checking for 053 5531234');
 ok($tel->set_number('053 5551234')->is_valid_number, 'checking for 053 5551234');
 ok($tel->set_number('053 5671234')->is_valid_number, 'checking for 053 5671234');
+ok($tel->set_number('053 5701234')->is_valid_number, 'checking for 053 5701234');
 ok($tel->set_number('053 5711234')->is_valid_number, 'checking for 053 5711234');
 ok($tel->set_number('053 5721234')->is_valid_number, 'checking for 053 5721234');
 ok($tel->set_number('053 5731234')->is_valid_number, 'checking for 053 5731234');
@@ -13392,6 +13394,7 @@ ok($tel->set_number('0568 861234')->is_valid_number, 'checking for 0568 861234')
 ok($tel->set_number('0568 871234')->is_valid_number, 'checking for 0568 871234');
 ok($tel->set_number('0568 881234')->is_valid_number, 'checking for 0568 881234');
 ok($tel->set_number('0568 891234')->is_valid_number, 'checking for 0568 891234');
+ok($tel->set_number('0568 901234')->is_valid_number, 'checking for 0568 901234');
 ok($tel->set_number('0568 911234')->is_valid_number, 'checking for 0568 911234');
 ok($tel->set_number('0568 921234')->is_valid_number, 'checking for 0568 921234');
 ok($tel->set_number('0568 931234')->is_valid_number, 'checking for 0568 931234');
@@ -30942,7 +30945,6 @@ ok(!$tel->set_number('048 8691234')->is_valid_number, 'checking for 048 8691234'
 ok(!$tel->set_number('048 8701234')->is_valid_number, 'checking for 048 8701234');
 ok(!$tel->set_number('048 8791234')->is_valid_number, 'checking for 048 8791234');
 ok(!$tel->set_number('048 8801234')->is_valid_number, 'checking for 048 8801234');
-ok(!$tel->set_number('048 8881234')->is_valid_number, 'checking for 048 8881234');
 ok(!$tel->set_number('048 8891234')->is_valid_number, 'checking for 048 8891234');
 ok(!$tel->set_number('048 8901234')->is_valid_number, 'checking for 048 8901234');
 ok(!$tel->set_number('048 8911234')->is_valid_number, 'checking for 048 8911234');
@@ -31710,7 +31712,6 @@ ok(!$tel->set_number('053 5651234')->is_valid_number, 'checking for 053 5651234'
 ok(!$tel->set_number('053 5661234')->is_valid_number, 'checking for 053 5661234');
 ok(!$tel->set_number('053 5681234')->is_valid_number, 'checking for 053 5681234');
 ok(!$tel->set_number('053 5691234')->is_valid_number, 'checking for 053 5691234');
-ok(!$tel->set_number('053 5701234')->is_valid_number, 'checking for 053 5701234');
 ok(!$tel->set_number('053 5901234')->is_valid_number, 'checking for 053 5901234');
 ok(!$tel->set_number('053 5911234')->is_valid_number, 'checking for 053 5911234');
 ok(!$tel->set_number('053 5981234')->is_valid_number, 'checking for 053 5981234');
@@ -32965,7 +32966,6 @@ ok(!$tel->set_number('0568 381234')->is_valid_number, 'checking for 0568 381234'
 ok(!$tel->set_number('0568 401234')->is_valid_number, 'checking for 0568 401234');
 ok(!$tel->set_number('0568 461234')->is_valid_number, 'checking for 0568 461234');
 ok(!$tel->set_number('0568 491234')->is_valid_number, 'checking for 0568 491234');
-ok(!$tel->set_number('0568 901234')->is_valid_number, 'checking for 0568 901234');
 ok(!$tel->set_number('0568 961234')->is_valid_number, 'checking for 0568 961234');
 ok(!$tel->set_number('0568 981234')->is_valid_number, 'checking for 0568 981234');
 ok(!$tel->set_number('0568 991234')->is_valid_number, 'checking for 0568 991234');
