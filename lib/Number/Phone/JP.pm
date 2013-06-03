@@ -6,7 +6,7 @@ use 5.008_001;
 use Carp;
 use UNIVERSAL::require;
 
-our $VERSION = '0.20130501';
+our $VERSION = '0.20130603';
 our %TEL_TABLE = ();
 
 sub import {
@@ -356,7 +356,7 @@ Following methods are not implemented on this module. It just returns undef.
 
 =head1 AUTHOR
 
-Koichi Taniguchi (a.k.a. nipotan) E<lt>taniguchi@livedoor.jpE<gt>
+Koichi Taniguchi (a.k.a. nipotan) E<lt>taniguchi@cpan.orgE<gt>
 
 =head1 LICENSE
 

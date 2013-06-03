@@ -3,7 +3,7 @@ package Number::Phone::JP::Table;
 use strict;
 use warnings;
 
-our $VERSION = '0.20130501';
+our $VERSION = '0.20130603';
 
 require Number::Phone::JP::Table::Class1;
 require Number::Phone::JP::Table::Class2;
@@ -58,7 +58,7 @@ by Number::Phone::JP.
 
 =head1 AUTHOR
 
-Koichi Taniguchi (a.k.a. nipotan) E<lt>taniguchi@livedoor.jpE<gt>
+Koichi Taniguchi (a.k.a. nipotan) E<lt>taniguchi@cpan.orgE<gt>
 
 =head1 LICENSE
 

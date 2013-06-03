@@ -890,6 +890,10 @@ ok($tel->set_number('080 98212345')->is_valid_number, 'checking for 080 98212345
 ok($tel->set_number('080 98312345')->is_valid_number, 'checking for 080 98312345');
 ok($tel->set_number('080 98412345')->is_valid_number, 'checking for 080 98412345');
 ok($tel->set_number('080 98512345')->is_valid_number, 'checking for 080 98512345');
+ok($tel->set_number('080 98612345')->is_valid_number, 'checking for 080 98612345');
+ok($tel->set_number('080 98712345')->is_valid_number, 'checking for 080 98712345');
+ok($tel->set_number('080 98812345')->is_valid_number, 'checking for 080 98812345');
+ok($tel->set_number('080 98912345')->is_valid_number, 'checking for 080 98912345');
 ok($tel->set_number('080 99012345')->is_valid_number, 'checking for 080 99012345');
 ok($tel->set_number('080 99112345')->is_valid_number, 'checking for 080 99112345');
 ok($tel->set_number('080 99212345')->is_valid_number, 'checking for 080 99212345');
@@ -1800,7 +1804,3 @@ ok($tel->set_number('090 99612345')->is_valid_number, 'checking for 090 99612345
 ok($tel->set_number('090 99712345')->is_valid_number, 'checking for 090 99712345');
 ok($tel->set_number('090 99812345')->is_valid_number, 'checking for 090 99812345');
 ok($tel->set_number('090 99912345')->is_valid_number, 'checking for 090 99912345');
-ok(!$tel->set_number('080 98612345')->is_valid_number, 'checking for 080 98612345');
-ok(!$tel->set_number('080 98712345')->is_valid_number, 'checking for 080 98712345');
-ok(!$tel->set_number('080 98812345')->is_valid_number, 'checking for 080 98812345');
-ok(!$tel->set_number('080 98912345')->is_valid_number, 'checking for 080 98912345');
