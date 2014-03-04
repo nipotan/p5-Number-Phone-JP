@@ -1,5 +1,15 @@
 Revision histories for Perl extension Number::Phone::JP
 
+0.20140303 Tue Mar  4 2014
+     - Update some table classes.
+     - Ministry of Internal Afairs and Communications of Japan
+       announced that "Q2" service has been stopped providing
+       at the end of February 2014 but this module will handle valid for
+       some former Q2 numbers for some future versions because some ranges of
+       the Q2 numbers are still allocated for NTT East and NTT West.
+       It means that maybe Number::Phone::JP::Table::Q2 will be
+       stopped updating.
+
 0.20140203 Mon Feb  3 2014
      - Update some table classes.
 
