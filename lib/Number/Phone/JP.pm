@@ -114,7 +114,19 @@ sub _is_this_type {
     return exists ${"$package\::TEL_TABLE"}{$pref};
 }
 
-sub is_mobile      { return shift->_is_this_type('mobile')   }
+sub is_mobile {
+    my $self = shift;
+    my $result = $self->_is_this_type('mobile');
+    return unless $result;
+    my $pref = $self->_prefix;
+    $pref =~ s/^0//;
+    return $result if $pref ne '70';
+    my $package = _table_class_name('mobile');
+    no strict 'refs';
+    my $re = ${"$package\::TEL_TABLE"}{$pref};
+    return $self->_number =~ /^$re$/;
+}
+
 sub is_pager       { return shift->_is_this_type('pager')    }
 sub is_ipphone     { return shift->_is_this_type('ipphone')  }
 sub is_tollfree    { return shift->_is_this_type('freedial') }
