@@ -37,12 +37,6 @@ sub main {
     my %task_map = (
         Class1   => +{ function => 'class' },
         Class2   => +{ skip => 1 },
-        Phs      => +{
-            function    => 'fixed_pref',
-            prefix      => '070',
-            test_suffix => '12345',
-            filename    => '000124109.xls',
-        },
         Pager    => +{
             function    => 'fixed_pref',
             prefix      => '020',
@@ -55,11 +49,6 @@ sub main {
             test_suffix => '123',
             filename    => '000124118.xls',
         },
-#        Fmc      => +{
-#            function    => 'fixed_pref',
-#            prefix      => '060',
-#            filename    => '000124107.xls',
-#        },
         Upt      => +{ function    => 'upt' },
         United   => +{
             function    => 'fixed_pref',
@@ -71,12 +60,6 @@ sub main {
             function    => 'fixed_pref',
             prefix      => '050',
             filename    => '000124106.xls',
-        },
-        Mobile   => +{
-            function    => 'fixed_pref',
-            prefix      => [qw(080 090)],
-            test_suffix => '12345',
-            filename    => [qw(000124110.xls 000124111.xls)],
         },
         Freedial => +{
             function    => 'fixed_pref',
@@ -197,6 +180,119 @@ sub fixed_pref {
     close $fh;
 
     make_test($lc_class, \@ok, \@ng);
+}
+
+sub mobile {
+    my @files = (qw/000200622.xls 000124110.xls 000124111.xls/);
+    my @prefixes = qw(070 080 090);
+    my %regexp_table =
+        map { $_ => Regexp::Assemble::Compressed->new } @prefixes;
+    my $re = Regexp::Assemble::Compressed->new;
+    for my $prefix (@prefixes) {
+        $re->add($prefix);
+    }
+    (my $prefix_re = $re->re) =~ s/^\(\?-xism:/(?:/;
+    my @rows_list = ();
+    my @cols_list = ();
+    my @column_values_list = ();
+    for my $file (@files) {
+        _warn($file);
+        $file = "$STOREDIR/$file";
+        http_get_file($file) or die "HTTP failed";
+        my($rows, $cols, $column_values) = parse_excel($file);
+        push @rows_list, $rows;
+        push @cols_list, $cols;
+        push @column_values_list, $column_values;
+    }
+    my $filename = "$TABLEDIR/Mobile.pm";
+    open my $fh, '>', $filename or die "$filename: $!";
+    print $fh table_class_header('Mobile');
+
+    my @ok = ();
+    my @ng = ();
+
+    for my $i (0 .. $#rows_list) {
+        my $rows = $rows_list[$i];
+        my $cols = $cols_list[$i];
+        my $column_values = $column_values_list[$i];
+        for my $row (sort { $a <=> $b } keys %$rows) {
+            for my $col (sort { $a <=> $b } keys %$cols) {
+                my $number = sprintf '%s%s', $rows->{$row}, $cols->{$col};
+                my $value = $column_values->{$row}{$col};
+                my $orig_number = $number;
+                $number =~ s/^($prefix_re)//;
+                my $prefix = $1;
+                next if $prefix eq '070' && $number !~ m{^[1-47-9]}; # PHP
+                my $test_suffix = '12345';
+                my $regexp_suffix = '\d{' . length($test_suffix) . '}';
+                _warn($orig_number . ("x" x (length $test_suffix)));
+                if (!defined $value || $value =~ /^(\s|-)*$/) {
+                    push @ng, "$prefix ${number}${test_suffix}";
+                    next;
+                }
+                else {
+                    push @ok, "$prefix ${number}${test_suffix}";
+                }
+                my $re = $regexp_table{$prefix};
+                $re->add($number . $regexp_suffix);
+            }
+        }
+    }
+    for my $prefix (@prefixes) {
+        my $re = $regexp_table{$prefix};
+        (my $regexp = $re->re) =~ s/^\(\?-xism:/(?:/;
+        (my $table_prefix = $prefix) =~ s/^0//;
+        printf $fh "    $table_prefix => '%s',\n", compress($regexp);
+    }
+    printf $fh table_class_footer();
+    close $fh;
+
+    make_test('mobile', \@ok, \@ng);
+}
+
+sub phs {
+    my $file = '000200622.xls';
+    _warn($file);
+    $file = "$STOREDIR/$file";
+    http_get_file($file) or die "HTTP failed";
+    my($rows, $cols, $column_values) = parse_excel($file);
+    my $prefix = '070';
+    my %regexp_table = ($prefix => Regexp::Assemble::Compressed->new);
+
+    my @ok = ();
+    my @ng = ();
+    for my $row (sort { $a <=> $b } keys %$rows) {
+        for my $col (sort { $a <=> $b } keys %$cols) {
+            my $number = sprintf '%s%s', $rows->{$row}, $cols->{$col};
+            my $value = $column_values->{$row}{$col};
+            my $orig_number = $number;
+            $number =~ s/^($prefix)//;
+            next if $number !~ m{^[56]}; # Mobile
+            my $test_suffix = '12345';
+            my $regexp_suffix = '\d{' . length($test_suffix) . '}';
+            _warn($orig_number . ("x" x (length $test_suffix)));
+            if (!defined $value || $value =~ /^(\s|-)*$/) {
+                push @ng, "$prefix ${number}${test_suffix}";
+                next;
+            }
+            else {
+                push @ok, "$prefix ${number}${test_suffix}";
+            }
+            my $re = $regexp_table{$prefix};
+            $re->add($number . $regexp_suffix);
+        }
+    }
+    my $filename = "$TABLEDIR/Phs.pm";
+    open my $fh, '>', $filename or die "$filename: $!";
+    print $fh table_class_header('Phs');
+    my $re = $regexp_table{$prefix};
+    (my $regexp = $re->re) =~ s/^\(\?-xism:/(?:/;
+    (my $table_prefix = $prefix) =~ s/^0//;
+    printf $fh "    $table_prefix => '%s',\n", compress($regexp);
+    printf $fh table_class_footer();
+    close $fh;
+
+    make_test('phs', \@ok, \@ng);
 }
 
 sub home {

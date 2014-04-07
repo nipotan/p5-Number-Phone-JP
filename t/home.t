@@ -8085,7 +8085,6 @@ ok($tel->set_number('03 69121234')->is_valid_number, 'checking for 03 69121234')
 ok($tel->set_number('03 69131234')->is_valid_number, 'checking for 03 69131234');
 ok($tel->set_number('03 69141234')->is_valid_number, 'checking for 03 69141234');
 ok($tel->set_number('03 69151234')->is_valid_number, 'checking for 03 69151234');
-ok($tel->set_number('03 69161234')->is_valid_number, 'checking for 03 69161234');
 ok($tel->set_number('0422 201234')->is_valid_number, 'checking for 0422 201234');
 ok($tel->set_number('0422 211234')->is_valid_number, 'checking for 0422 211234');
 ok($tel->set_number('0422 221234')->is_valid_number, 'checking for 0422 221234');
@@ -15424,6 +15423,7 @@ ok($tel->set_number('072 3661234')->is_valid_number, 'checking for 072 3661234')
 ok($tel->set_number('072 3671234')->is_valid_number, 'checking for 072 3671234');
 ok($tel->set_number('072 3681234')->is_valid_number, 'checking for 072 3681234');
 ok($tel->set_number('072 3691234')->is_valid_number, 'checking for 072 3691234');
+ok($tel->set_number('072 3701234')->is_valid_number, 'checking for 072 3701234');
 ok($tel->set_number('072 3721234')->is_valid_number, 'checking for 072 3721234');
 ok($tel->set_number('072 3731234')->is_valid_number, 'checking for 072 3731234');
 ok($tel->set_number('072 3771234')->is_valid_number, 'checking for 072 3771234');
@@ -18250,6 +18250,7 @@ ok($tel->set_number('0797 971234')->is_valid_number, 'checking for 0797 971234')
 ok($tel->set_number('0797 981234')->is_valid_number, 'checking for 0797 981234');
 ok($tel->set_number('0797 991234')->is_valid_number, 'checking for 0797 991234');
 ok($tel->set_number('0798 201234')->is_valid_number, 'checking for 0798 201234');
+ok($tel->set_number('0798 211234')->is_valid_number, 'checking for 0798 211234');
 ok($tel->set_number('0798 221234')->is_valid_number, 'checking for 0798 221234');
 ok($tel->set_number('0798 231234')->is_valid_number, 'checking for 0798 231234');
 ok($tel->set_number('0798 241234')->is_valid_number, 'checking for 0798 241234');
@@ -29280,6 +29281,7 @@ ok(!$tel->set_number('03 68271234')->is_valid_number, 'checking for 03 68271234'
 ok(!$tel->set_number('03 68281234')->is_valid_number, 'checking for 03 68281234');
 ok(!$tel->set_number('03 68291234')->is_valid_number, 'checking for 03 68291234');
 ok(!$tel->set_number('03 68391234')->is_valid_number, 'checking for 03 68391234');
+ok(!$tel->set_number('03 69161234')->is_valid_number, 'checking for 03 69161234');
 ok(!$tel->set_number('03 69171234')->is_valid_number, 'checking for 03 69171234');
 ok(!$tel->set_number('03 69181234')->is_valid_number, 'checking for 03 69181234');
 ok(!$tel->set_number('03 69191234')->is_valid_number, 'checking for 03 69191234');
@@ -36045,7 +36047,6 @@ ok(!$tel->set_number('072 3571234')->is_valid_number, 'checking for 072 3571234'
 ok(!$tel->set_number('072 3581234')->is_valid_number, 'checking for 072 3581234');
 ok(!$tel->set_number('072 3591234')->is_valid_number, 'checking for 072 3591234');
 ok(!$tel->set_number('072 3641234')->is_valid_number, 'checking for 072 3641234');
-ok(!$tel->set_number('072 3701234')->is_valid_number, 'checking for 072 3701234');
 ok(!$tel->set_number('072 3711234')->is_valid_number, 'checking for 072 3711234');
 ok(!$tel->set_number('072 3741234')->is_valid_number, 'checking for 072 3741234');
 ok(!$tel->set_number('072 3751234')->is_valid_number, 'checking for 072 3751234');
@@ -38248,7 +38249,6 @@ ok(!$tel->set_number('0797 921234')->is_valid_number, 'checking for 0797 921234'
 ok(!$tel->set_number('0797 931234')->is_valid_number, 'checking for 0797 931234');
 ok(!$tel->set_number('0797 941234')->is_valid_number, 'checking for 0797 941234');
 ok(!$tel->set_number('0797 951234')->is_valid_number, 'checking for 0797 951234');
-ok(!$tel->set_number('0798 211234')->is_valid_number, 'checking for 0798 211234');
 ok(!$tel->set_number('0798 291234')->is_valid_number, 'checking for 0798 291234');
 ok(!$tel->set_number('0798 501234')->is_valid_number, 'checking for 0798 501234');
 ok(!$tel->set_number('0798 601234')->is_valid_number, 'checking for 0798 601234');
