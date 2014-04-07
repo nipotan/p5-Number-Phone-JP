@@ -117,7 +117,7 @@ sub _is_this_type {
 sub is_mobile {
     my $self = shift;
     my $result = $self->_is_this_type('mobile');
-    return unless $result;
+    return $result unless $result;
     my $pref = $self->_prefix;
     $pref =~ s/^0//;
     return $result if $pref ne '70';
