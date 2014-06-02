@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl
+#!/usr/bin/env perl
 
 use strict;
 use warnings;
@@ -6,7 +6,6 @@ use Encode;
 use FindBin;
 use LWP::Simple;
 use Regexp::Assemble::Compressed;
-use HTML::TableParser::Grid;
 use Spreadsheet::ParseExcel;
 use File::Basename;
 use File::Path;
@@ -120,7 +119,7 @@ sub fixed_pref {
         for my $prefix (@prefixes) {
             $re->add($prefix);
         }
-        ($prefix_re = $re->re) =~ s/^\(\?-xism:/(?:/;
+        ($prefix_re = $re->re) =~ s/^\(\?(?:-xism|\^):/(?:/;
     }
     my @rows_list = ();
     my @cols_list = ();
@@ -172,7 +171,7 @@ sub fixed_pref {
     }
     for my $prefix (@prefixes) {
         my $re = $regexp_table{$prefix};
-        (my $regexp = $re->re) =~ s/^\(\?-xism:/(?:/;
+        (my $regexp = $re->re) =~ s/^\(\?(?:-xism|\^):/(?:/;
         (my $table_prefix = $prefix) =~ s/^0//;
         printf $fh "    $table_prefix => '%s',\n", compress($regexp);
     }
@@ -191,7 +190,7 @@ sub mobile {
     for my $prefix (@prefixes) {
         $re->add($prefix);
     }
-    (my $prefix_re = $re->re) =~ s/^\(\?-xism:/(?:/;
+    (my $prefix_re = $re->re) =~ s/^\(\?(?:-xism|\^):/(?:/;
     my @rows_list = ();
     my @cols_list = ();
     my @column_values_list = ();
@@ -240,7 +239,7 @@ sub mobile {
     }
     for my $prefix (@prefixes) {
         my $re = $regexp_table{$prefix};
-        (my $regexp = $re->re) =~ s/^\(\?-xism:/(?:/;
+        (my $regexp = $re->re) =~ s/^\(\?(?:-xism|\^):/(?:/;
         (my $table_prefix = $prefix) =~ s/^0//;
         printf $fh "    $table_prefix => '%s',\n", compress($regexp);
     }
@@ -286,7 +285,7 @@ sub phs {
     open my $fh, '>', $filename or die "$filename: $!";
     print $fh table_class_header('Phs');
     my $re = $regexp_table{$prefix};
-    (my $regexp = $re->re) =~ s/^\(\?-xism:/(?:/;
+    (my $regexp = $re->re) =~ s/^\(\?(?:-xism|\^):/(?:/;
     (my $table_prefix = $prefix) =~ s/^0//;
     printf $fh "    $table_prefix => '%s',\n", compress($regexp);
     printf $fh table_class_footer();
@@ -339,7 +338,7 @@ sub home {
     open my $fh, '>', $filename or die "$filename: $!";
     print $fh table_class_header($class);
     for my $pref (sort { $a cmp $b } keys %table) {
-        (my $re = $table{$pref}->re) =~ s/^\(\?-xism:/(?:/;
+        (my $re = $table{$pref}->re) =~ s/^\(\?(?:-xism|\^):/(?:/;
         printf $fh "    %-4d => '%s',\n", $pref, compress($re);
     }
     print $fh table_class_footer();
