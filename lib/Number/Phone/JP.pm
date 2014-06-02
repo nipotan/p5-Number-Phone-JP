@@ -3,6 +3,7 @@ package Number::Phone::JP;
 use strict;
 use warnings;
 use 5.008_001;
+use parent qw(Number::Phone);
 use Carp;
 use UNIVERSAL::require;
 
