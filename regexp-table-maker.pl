@@ -221,7 +221,6 @@ sub mobile {
                 my $orig_number = $number;
                 $number =~ s/^($prefix_re)//;
                 my $prefix = $1;
-                next if $prefix eq '070' && $number !~ m{^[1-47-9]}; # PHP
                 my $test_suffix = '12345';
                 my $regexp_suffix = '\d{' . length($test_suffix) . '}';
                 _warn($orig_number . ("x" x (length $test_suffix)));
@@ -247,51 +246,14 @@ sub mobile {
     close $fh;
 
     make_test('mobile', \@ok, \@ng);
+    make_test('phs', \@ok, \@ng);
 }
 
 sub phs {
-    my $file = '000200622.xls';
-    _warn($file);
-    $file = "$STOREDIR/$file";
-    http_get_file($file) or die "HTTP failed";
-    my($rows, $cols, $column_values) = parse_excel($file);
-    my $prefix = '070';
-    my %regexp_table = ($prefix => Regexp::Assemble::Compressed->new);
-
-    my @ok = ();
-    my @ng = ();
-    for my $row (sort { $a <=> $b } keys %$rows) {
-        for my $col (sort { $a <=> $b } keys %$cols) {
-            my $number = sprintf '%s%s', $rows->{$row}, $cols->{$col};
-            my $value = $column_values->{$row}{$col};
-            my $orig_number = $number;
-            $number =~ s/^($prefix)//;
-            next if $number !~ m{^[56]}; # Mobile
-            my $test_suffix = '12345';
-            my $regexp_suffix = '\d{' . length($test_suffix) . '}';
-            _warn($orig_number . ("x" x (length $test_suffix)));
-            if (!defined $value || $value =~ /^(\s|-)*$/) {
-                push @ng, "$prefix ${number}${test_suffix}";
-                next;
-            }
-            else {
-                push @ok, "$prefix ${number}${test_suffix}";
-            }
-            my $re = $regexp_table{$prefix};
-            $re->add($number . $regexp_suffix);
-        }
-    }
     my $filename = "$TABLEDIR/Phs.pm";
     open my $fh, '>', $filename or die "$filename: $!";
-    print $fh table_class_header('Phs');
-    my $re = $regexp_table{$prefix};
-    (my $regexp = $re->re) =~ s/^\(\?(?:-xism|\^):/(?:/;
-    (my $table_prefix = $prefix) =~ s/^0//;
-    printf $fh "    $table_prefix => '%s',\n", compress($regexp);
-    printf $fh table_class_footer();
+    print $fh inherit_class('Phs', 'Mobile');
     close $fh;
-
-    make_test('phs', \@ok, \@ng);
 }
 
 sub home {
@@ -439,21 +401,7 @@ sub class {
 sub upt {
     my $filename = "$TABLEDIR/Upt.pm";
     open my $fh, '>', $filename or die "$filename: $!";
-    printf $fh <<'END', $VERSION;
-package Number::Phone::JP::Table::Upt;
-
-use strict;
-use warnings;
-require Number::Phone::JP::Table::Fmc;
-
-our $VERSION = '%s';
-
-our %%TEL_TABLE = %%Number::Phone::JP::Table::Fmc::TEL_TABLE;
-
-1;
-__END__
-END
-    ;
+    print $fh inherit_class('Upt', 'Fmc');
     close $fh;
     make_test('upt', [], []);
 }
@@ -563,6 +511,26 @@ END
 sub table_class_footer {
     return <<'END';
 );
+
+1;
+__END__
+END
+    ;
+}
+
+sub inherit_class {
+    my($name, $parent) = @_;
+    return sprintf <<'END', $name, $parent, $VERSION, $parent;
+package Number::Phone::JP::Table::%s;
+
+use strict;
+use warnings;
+require Number::Phone::JP::Table::%s;
+
+our $VERSION = '%s';
+
+no warnings 'once';
+our %%TEL_TABLE = %%Number::Phone::JP::Table::%s::TEL_TABLE;
 
 1;
 __END__
