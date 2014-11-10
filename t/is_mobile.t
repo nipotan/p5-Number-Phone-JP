@@ -11,6 +11,6 @@ ok(! Number::Phone->new('+81112001234')->is_mobile, 'checking for 011 2001234');
 ok(! Number::Phone->new('+815010001234')->is_mobile, 'checking for 050 10001234');
 ok(  Number::Phone->new('+818010012345')->is_mobile, 'checking for 080 10012345');
 ok(! Number::Phone->new('+812046012345')->is_mobile, 'checking for 020 46012345');
-ok(! Number::Phone->new('+817050112345')->is_mobile, 'checking for 070 50112345');
+ok(  Number::Phone->new('+817050112345')->is_mobile, 'checking for 070 50112345');
 ok(! Number::Phone->new('+81990500123')->is_mobile, 'checking for 0990 500123');
 ok(! Number::Phone->new('+81570000123')->is_mobile, 'checking for 0570 000123');

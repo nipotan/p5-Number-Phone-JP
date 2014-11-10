@@ -1,5 +1,14 @@
 Revision histories for Perl extension Number::Phone::JP
 
+0.20141105 Mon Nov 10 2014
+     - In October, rules of mobile number portability in Japan has been changed.
+       Each number of Mobiles (cellular) phones and PHS phones can be exchanged
+       portably and seamlessly. Therefore, Number::Phone::JP::Table::Mobile and
+       Number::Phone::JP::Table::Phs use same validation table and
+       return same results on given same numbers.
+       It was noticed, and patched by Kazuma Shiraiwa.
+     - Update some table classes.
+
 0.20141001 Fri Oct  3 2014
      - Update some table classes.
 

@@ -904,6 +904,7 @@ ok($tel->set_number('0120 896123')->is_valid_number, 'checking for 0120 896123')
 ok($tel->set_number('0120 897123')->is_valid_number, 'checking for 0120 897123');
 ok($tel->set_number('0120 898123')->is_valid_number, 'checking for 0120 898123');
 ok($tel->set_number('0120 899123')->is_valid_number, 'checking for 0120 899123');
+ok($tel->set_number('0120 900123')->is_valid_number, 'checking for 0120 900123');
 ok($tel->set_number('0120 901123')->is_valid_number, 'checking for 0120 901123');
 ok($tel->set_number('0120 905123')->is_valid_number, 'checking for 0120 905123');
 ok($tel->set_number('0120 907123')->is_valid_number, 'checking for 0120 907123');
@@ -941,6 +942,7 @@ ok($tel->set_number('0120 940123')->is_valid_number, 'checking for 0120 940123')
 ok($tel->set_number('0120 941123')->is_valid_number, 'checking for 0120 941123');
 ok($tel->set_number('0120 944123')->is_valid_number, 'checking for 0120 944123');
 ok($tel->set_number('0120 945123')->is_valid_number, 'checking for 0120 945123');
+ok($tel->set_number('0120 946123')->is_valid_number, 'checking for 0120 946123');
 ok($tel->set_number('0120 947123')->is_valid_number, 'checking for 0120 947123');
 ok($tel->set_number('0120 948123')->is_valid_number, 'checking for 0120 948123');
 ok($tel->set_number('0120 949123')->is_valid_number, 'checking for 0120 949123');
@@ -1299,7 +1301,6 @@ ok($tel->set_number('0800 9961234')->is_valid_number, 'checking for 0800 9961234
 ok($tel->set_number('0800 9971234')->is_valid_number, 'checking for 0800 9971234');
 ok($tel->set_number('0800 9981234')->is_valid_number, 'checking for 0800 9981234');
 ok($tel->set_number('0800 9991234')->is_valid_number, 'checking for 0800 9991234');
-ok(!$tel->set_number('0120 900123')->is_valid_number, 'checking for 0120 900123');
 ok(!$tel->set_number('0120 902123')->is_valid_number, 'checking for 0120 902123');
 ok(!$tel->set_number('0120 903123')->is_valid_number, 'checking for 0120 903123');
 ok(!$tel->set_number('0120 904123')->is_valid_number, 'checking for 0120 904123');
@@ -1308,7 +1309,6 @@ ok(!$tel->set_number('0120 908123')->is_valid_number, 'checking for 0120 908123'
 ok(!$tel->set_number('0120 909123')->is_valid_number, 'checking for 0120 909123');
 ok(!$tel->set_number('0120 942123')->is_valid_number, 'checking for 0120 942123');
 ok(!$tel->set_number('0120 943123')->is_valid_number, 'checking for 0120 943123');
-ok(!$tel->set_number('0120 946123')->is_valid_number, 'checking for 0120 946123');
 ok(!$tel->set_number('0800 0011234')->is_valid_number, 'checking for 0800 0011234');
 ok(!$tel->set_number('0800 0021234')->is_valid_number, 'checking for 0800 0021234');
 ok(!$tel->set_number('0800 0031234')->is_valid_number, 'checking for 0800 0031234');

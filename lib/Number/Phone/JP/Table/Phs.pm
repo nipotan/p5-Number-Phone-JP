@@ -2,14 +2,11 @@ package Number::Phone::JP::Table::Phs;
 
 use strict;
 use warnings;
+require Number::Phone::JP::Table::Mobile;
 
-our $VERSION = '0.20141001';
+our $VERSION = '0.20141105';
 
-# Table last modified: 2014-10-01
-our %TEL_TABLE = (
-    # Pref => q<Assoc-Pref-Regex>,
-    70 => '(?:(?:6(?:3[0-6]|[124-69]\d|8[0-5])|5(?:0[1-9]|[1-6]\d|81))\d{5})',
-);
+no warnings 'once';
+our %TEL_TABLE = %Number::Phone::JP::Table::Mobile::TEL_TABLE;
 
 1;
-__END__
