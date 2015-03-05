@@ -2068,6 +2068,12 @@ ok($tel->set_number('050 68651234')->is_valid_number, 'checking for 050 68651234
 ok($tel->set_number('050 68661234')->is_valid_number, 'checking for 050 68661234');
 ok($tel->set_number('050 68671234')->is_valid_number, 'checking for 050 68671234');
 ok($tel->set_number('050 68681234')->is_valid_number, 'checking for 050 68681234');
+ok($tel->set_number('050 68691234')->is_valid_number, 'checking for 050 68691234');
+ok($tel->set_number('050 68701234')->is_valid_number, 'checking for 050 68701234');
+ok($tel->set_number('050 68711234')->is_valid_number, 'checking for 050 68711234');
+ok($tel->set_number('050 68721234')->is_valid_number, 'checking for 050 68721234');
+ok($tel->set_number('050 68731234')->is_valid_number, 'checking for 050 68731234');
+ok($tel->set_number('050 68741234')->is_valid_number, 'checking for 050 68741234');
 ok($tel->set_number('050 70001234')->is_valid_number, 'checking for 050 70001234');
 ok($tel->set_number('050 70011234')->is_valid_number, 'checking for 050 70011234');
 ok($tel->set_number('050 71001234')->is_valid_number, 'checking for 050 71001234');
@@ -6148,12 +6154,6 @@ ok(!$tel->set_number('050 68561234')->is_valid_number, 'checking for 050 6856123
 ok(!$tel->set_number('050 68571234')->is_valid_number, 'checking for 050 68571234');
 ok(!$tel->set_number('050 68581234')->is_valid_number, 'checking for 050 68581234');
 ok(!$tel->set_number('050 68591234')->is_valid_number, 'checking for 050 68591234');
-ok(!$tel->set_number('050 68691234')->is_valid_number, 'checking for 050 68691234');
-ok(!$tel->set_number('050 68701234')->is_valid_number, 'checking for 050 68701234');
-ok(!$tel->set_number('050 68711234')->is_valid_number, 'checking for 050 68711234');
-ok(!$tel->set_number('050 68721234')->is_valid_number, 'checking for 050 68721234');
-ok(!$tel->set_number('050 68731234')->is_valid_number, 'checking for 050 68731234');
-ok(!$tel->set_number('050 68741234')->is_valid_number, 'checking for 050 68741234');
 ok(!$tel->set_number('050 68751234')->is_valid_number, 'checking for 050 68751234');
 ok(!$tel->set_number('050 68761234')->is_valid_number, 'checking for 050 68761234');
 ok(!$tel->set_number('050 68771234')->is_valid_number, 'checking for 050 68771234');
