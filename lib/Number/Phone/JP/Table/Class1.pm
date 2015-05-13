@@ -3,9 +3,9 @@ package Number::Phone::JP::Table::Class1;
 use strict;
 use warnings;
 
-our $VERSION = '0.20150402';
+our $VERSION = '0.20150513';
 
-# Table last modified: 2015-04-02
+# Table last modified: 2015-05-13
 our %TEL_TABLE = (
     # Pref => q<Assoc-Pref-Regex>,
     '01'    => '\d+', # KDDI
@@ -45,7 +45,6 @@ our %TEL_TABLE = (
     '082'   => '\d+', # フュージョンコミュニケーションズ
     '083'   => '\d+', # ソフトバンクモバイル
     '084'   => '\d+', # ソフトバンクモバイル
-    '085'   => '\d+', # NTTメディアクロス
     '086'   => '\d+', # 九州通信ネットワーク
     '088'   => '\d+', # ソフトバンクモバイル
     '089'   => '\d+', # Tシステムズ・ジャパン
