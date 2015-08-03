@@ -11903,6 +11903,7 @@ ok($tel->set_number('052 8571234')->is_valid_number, 'checking for 052 8571234')
 ok($tel->set_number('052 8581234')->is_valid_number, 'checking for 052 8581234');
 ok($tel->set_number('052 8591234')->is_valid_number, 'checking for 052 8591234');
 ok($tel->set_number('052 8611234')->is_valid_number, 'checking for 052 8611234');
+ok($tel->set_number('052 8701234')->is_valid_number, 'checking for 052 8701234');
 ok($tel->set_number('052 8711234')->is_valid_number, 'checking for 052 8711234');
 ok($tel->set_number('052 8721234')->is_valid_number, 'checking for 052 8721234');
 ok($tel->set_number('052 8751234')->is_valid_number, 'checking for 052 8751234');
@@ -13245,6 +13246,7 @@ ok($tel->set_number('0566 611234')->is_valid_number, 'checking for 0566 611234')
 ok($tel->set_number('0566 621234')->is_valid_number, 'checking for 0566 621234');
 ok($tel->set_number('0566 631234')->is_valid_number, 'checking for 0566 631234');
 ok($tel->set_number('0566 661234')->is_valid_number, 'checking for 0566 661234');
+ok($tel->set_number('0566 681234')->is_valid_number, 'checking for 0566 681234');
 ok($tel->set_number('0566 701234')->is_valid_number, 'checking for 0566 701234');
 ok($tel->set_number('0566 711234')->is_valid_number, 'checking for 0566 711234');
 ok($tel->set_number('0566 721234')->is_valid_number, 'checking for 0566 721234');
@@ -31583,7 +31585,6 @@ ok(!$tel->set_number('052 8661234')->is_valid_number, 'checking for 052 8661234'
 ok(!$tel->set_number('052 8671234')->is_valid_number, 'checking for 052 8671234');
 ok(!$tel->set_number('052 8681234')->is_valid_number, 'checking for 052 8681234');
 ok(!$tel->set_number('052 8691234')->is_valid_number, 'checking for 052 8691234');
-ok(!$tel->set_number('052 8701234')->is_valid_number, 'checking for 052 8701234');
 ok(!$tel->set_number('052 8731234')->is_valid_number, 'checking for 052 8731234');
 ok(!$tel->set_number('052 8741234')->is_valid_number, 'checking for 052 8741234');
 ok(!$tel->set_number('052 8881234')->is_valid_number, 'checking for 052 8881234');
@@ -32919,7 +32920,6 @@ ok(!$tel->set_number('0566 601234')->is_valid_number, 'checking for 0566 601234'
 ok(!$tel->set_number('0566 641234')->is_valid_number, 'checking for 0566 641234');
 ok(!$tel->set_number('0566 651234')->is_valid_number, 'checking for 0566 651234');
 ok(!$tel->set_number('0566 671234')->is_valid_number, 'checking for 0566 671234');
-ok(!$tel->set_number('0566 681234')->is_valid_number, 'checking for 0566 681234');
 ok(!$tel->set_number('0566 691234')->is_valid_number, 'checking for 0566 691234');
 ok(!$tel->set_number('0566 901234')->is_valid_number, 'checking for 0566 901234');
 ok(!$tel->set_number('0566 941234')->is_valid_number, 'checking for 0566 941234');
