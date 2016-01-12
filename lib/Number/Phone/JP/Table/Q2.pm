@@ -3,9 +3,9 @@ package Number::Phone::JP::Table::Q2;
 use strict;
 use warnings;
 
-our $VERSION = '0.20151202';
+our $VERSION = '0.20160105';
 
-# Table last modified: 2015-12-02
+# Table last modified: 2016-01-05
 our %TEL_TABLE = (
     # Pref => q<Assoc-Pref-Regex>,
     990 => '(?:5(?:1[36]|04|25)\d{3})',

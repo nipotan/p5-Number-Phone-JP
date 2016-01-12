@@ -3,9 +3,9 @@ package Number::Phone::JP::Table::Freedial;
 use strict;
 use warnings;
 
-our $VERSION = '0.20151202';
+our $VERSION = '0.20160105';
 
-# Table last modified: 2015-12-02
+# Table last modified: 2016-01-05
 our %TEL_TABLE = (
     # Pref => q<Assoc-Pref-Regex>,
     120 => '(?:(?:9(?:[1-35-9]\d|4[014-9]|0[0157])|[0-8]\d{2})\d{3})',
