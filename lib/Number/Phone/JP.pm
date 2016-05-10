@@ -7,7 +7,7 @@ use parent qw(Number::Phone);
 use Carp;
 use UNIVERSAL::require;
 
-our $VERSION = '0.20160404';
+our $VERSION = '0.20160502';
 our %TEL_TABLE = ();
 
 sub import {
