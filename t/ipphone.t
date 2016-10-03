@@ -1909,9 +1909,6 @@ ok($tel->set_number('050 55631234')->is_valid_number, 'checking for 050 55631234
 ok($tel->set_number('050 55641234')->is_valid_number, 'checking for 050 55641234');
 ok($tel->set_number('050 55651234')->is_valid_number, 'checking for 050 55651234');
 ok($tel->set_number('050 55661234')->is_valid_number, 'checking for 050 55661234');
-ok($tel->set_number('050 55671234')->is_valid_number, 'checking for 050 55671234');
-ok($tel->set_number('050 55681234')->is_valid_number, 'checking for 050 55681234');
-ok($tel->set_number('050 55691234')->is_valid_number, 'checking for 050 55691234');
 ok($tel->set_number('050 55701234')->is_valid_number, 'checking for 050 55701234');
 ok($tel->set_number('050 55711234')->is_valid_number, 'checking for 050 55711234');
 ok($tel->set_number('050 55721234')->is_valid_number, 'checking for 050 55721234');
@@ -2119,6 +2116,12 @@ ok($tel->set_number('050 71271234')->is_valid_number, 'checking for 050 71271234
 ok($tel->set_number('050 71281234')->is_valid_number, 'checking for 050 71281234');
 ok($tel->set_number('050 71291234')->is_valid_number, 'checking for 050 71291234');
 ok($tel->set_number('050 71301234')->is_valid_number, 'checking for 050 71301234');
+ok($tel->set_number('050 71311234')->is_valid_number, 'checking for 050 71311234');
+ok($tel->set_number('050 71321234')->is_valid_number, 'checking for 050 71321234');
+ok($tel->set_number('050 71331234')->is_valid_number, 'checking for 050 71331234');
+ok($tel->set_number('050 71341234')->is_valid_number, 'checking for 050 71341234');
+ok($tel->set_number('050 71351234')->is_valid_number, 'checking for 050 71351234');
+ok($tel->set_number('050 71361234')->is_valid_number, 'checking for 050 71361234');
 ok($tel->set_number('050 73001234')->is_valid_number, 'checking for 050 73001234');
 ok($tel->set_number('050 73011234')->is_valid_number, 'checking for 050 73011234');
 ok($tel->set_number('050 73021234')->is_valid_number, 'checking for 050 73021234');
@@ -5030,6 +5033,9 @@ ok(!$tel->set_number('050 54961234')->is_valid_number, 'checking for 050 5496123
 ok(!$tel->set_number('050 54971234')->is_valid_number, 'checking for 050 54971234');
 ok(!$tel->set_number('050 54981234')->is_valid_number, 'checking for 050 54981234');
 ok(!$tel->set_number('050 54991234')->is_valid_number, 'checking for 050 54991234');
+ok(!$tel->set_number('050 55671234')->is_valid_number, 'checking for 050 55671234');
+ok(!$tel->set_number('050 55681234')->is_valid_number, 'checking for 050 55681234');
+ok(!$tel->set_number('050 55691234')->is_valid_number, 'checking for 050 55691234');
 ok(!$tel->set_number('050 56001234')->is_valid_number, 'checking for 050 56001234');
 ok(!$tel->set_number('050 56011234')->is_valid_number, 'checking for 050 56011234');
 ok(!$tel->set_number('050 56021234')->is_valid_number, 'checking for 050 56021234');
@@ -6384,12 +6390,6 @@ ok(!$tel->set_number('050 70961234')->is_valid_number, 'checking for 050 7096123
 ok(!$tel->set_number('050 70971234')->is_valid_number, 'checking for 050 70971234');
 ok(!$tel->set_number('050 70981234')->is_valid_number, 'checking for 050 70981234');
 ok(!$tel->set_number('050 70991234')->is_valid_number, 'checking for 050 70991234');
-ok(!$tel->set_number('050 71311234')->is_valid_number, 'checking for 050 71311234');
-ok(!$tel->set_number('050 71321234')->is_valid_number, 'checking for 050 71321234');
-ok(!$tel->set_number('050 71331234')->is_valid_number, 'checking for 050 71331234');
-ok(!$tel->set_number('050 71341234')->is_valid_number, 'checking for 050 71341234');
-ok(!$tel->set_number('050 71351234')->is_valid_number, 'checking for 050 71351234');
-ok(!$tel->set_number('050 71361234')->is_valid_number, 'checking for 050 71361234');
 ok(!$tel->set_number('050 71371234')->is_valid_number, 'checking for 050 71371234');
 ok(!$tel->set_number('050 71381234')->is_valid_number, 'checking for 050 71381234');
 ok(!$tel->set_number('050 71391234')->is_valid_number, 'checking for 050 71391234');
