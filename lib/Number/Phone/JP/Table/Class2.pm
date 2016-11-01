@@ -3,9 +3,9 @@ package Number::Phone::JP::Table::Class2;
 use strict;
 use warnings;
 
-our $VERSION = '0.20161003';
+our $VERSION = '0.20161101';
 
-# Table last modified: 2016-10-03
+# Table last modified: 2016-11-01
 our %TEL_TABLE = (
     # Pref => q<Assoc-Pref-Regex>,
     '09120'  => '\d+', # ブラステル
