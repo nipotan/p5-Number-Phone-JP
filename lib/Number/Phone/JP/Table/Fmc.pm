@@ -3,7 +3,7 @@ package Number::Phone::JP::Table::Fmc;
 use strict;
 use warnings;
 
-our $VERSION = '0.20120105';
+our $VERSION = '0.20170801';
 
 # Table last modified: 2012-02-01
 our %TEL_TABLE = (
