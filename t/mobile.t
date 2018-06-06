@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 2801;
+use Test::More tests => 2701;
 
 use_ok('Number::Phone::JP', 'mobile');
 
