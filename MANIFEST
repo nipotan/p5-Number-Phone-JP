@@ -1,5 +1,4 @@
 Changes
-inc/Module/Install.pm
 lib/Number/Phone/JP.pm
 lib/Number/Phone/JP/Table.pm
 lib/Number/Phone/JP/Table/Class1.pm
